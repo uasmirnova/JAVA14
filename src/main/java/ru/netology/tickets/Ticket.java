@@ -1,6 +1,6 @@
 package ru.netology.tickets;
 
-public class Ticket implements Comparable<Ticket> {
+public class Ticket {
 
     protected int id;
     protected int price;
@@ -14,19 +14,6 @@ public class Ticket implements Comparable<Ticket> {
         this.departureAirport = departureAirport;
         this.arrivalAirport = arrivalAirport;
         this.flightTime = flightTime;
-    }
-
-    @Override
-    public int compareTo(Ticket o) {
-       if (price < o.getPrice()) {
-           return -1;
-       } else {
-           if (price > o.getPrice()) {
-               return 1;
-           } else {
-               return 0;
-           }
-       }
     }
 
     public int getId() {
