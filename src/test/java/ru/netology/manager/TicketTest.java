@@ -2,10 +2,11 @@ package ru.netology.manager;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import ru.netology.repository.TicketRepository;
 import ru.netology.tickets.Ticket;
 
-public class Test {
+public class TicketTest {
 
     TicketRepository repo = new TicketRepository();
     TicketManager manager = new TicketManager(repo);
@@ -26,7 +27,7 @@ public class Test {
         manager.add(ticket5);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     public void ShouldFindAll() {
 
         Ticket[] expected = { ticket1, ticket2, ticket3, ticket4, ticket5 };
@@ -35,7 +36,7 @@ public class Test {
         Assertions.assertArrayEquals(expected, actual);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     public void ShouldSearchByAirport2() {
 
         Ticket[] expected = { ticket5, ticket4 };
@@ -45,7 +46,7 @@ public class Test {
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     public void ShouldSearchByAirport1() {
 
         Ticket[] expected = { ticket3 };
@@ -55,7 +56,7 @@ public class Test {
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     public void ShouldSearchByName0() {
 
         Ticket[] expected = new Ticket[0];
@@ -65,7 +66,7 @@ public class Test {
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     public void ShouldSortByPrice() {
 
         Ticket ticket6 = new Ticket(6, 10000, "VKO", "AER", 2 );
