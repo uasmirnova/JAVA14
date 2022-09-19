@@ -27,10 +27,10 @@ public class TicketManager {
         return new Ticket[0];
     }
 
-    public Ticket[] searchBy(String getDepartureAirport, String getArrivalAirport, Comparator<Ticket> comparator) {
+    public Ticket[] searchBy(String DepartureAirport, String ArrivalAirport, Comparator<Ticket> comparator) {
         Ticket[] result = new Ticket[0];
         for (Ticket ticket : repo.findAll()) {
-            if (matches(ticket, getDepartureAirport, getArrivalAirport)) {
+            if (matches(ticket, DepartureAirport, ArrivalAirport)) {
                 Ticket[] tmp = new Ticket[result.length + 1];
                 System.arraycopy(result, 0, tmp, 0, result.length);
                 for (int i = 0; i < result.length; i++) {
